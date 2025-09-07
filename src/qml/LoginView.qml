@@ -3,12 +3,13 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "components"
 
+
 Rectangle {
     id: root
-    color: window.backgroundColor
-    
+    color: "lightgrey" //window.backgroundColor
+
     property bool loginInProgress: false
-    
+
     // Background with medical imagery
     Rectangle {
         anchors.fill: parent
@@ -35,7 +36,7 @@ Rectangle {
         anchors.centerIn: parent
         width: Math.min(400, root.width - 80)
         height: Math.min(500, root.height - 80)
-        color: window.surfaceColor
+        color: "lightgrey" //window.surfaceColor
         radius: 15
         border.color: window.primaryColor
         border.width: 2

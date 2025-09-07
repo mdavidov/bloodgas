@@ -3,10 +3,11 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "components"
 
+
 Rectangle {
     id: root
-    color: window.backgroundColor
-    
+    color: "lightgrey" //window.backgroundColor
+
     property bool deviceReady: calibrationManager ? calibrationManager.isCalibrated : false
     property bool analysisInProgress: bloodGasAnalyzer ? bloodGasAnalyzer.isAnalyzing : false
     
@@ -153,7 +154,7 @@ Rectangle {
                     Rectangle {
                         width: parent.width
                         height: 120
-                        color: window.surfaceColor
+                        color: "lightgrey" //window.surfaceColor
                         radius: 10
                         border.color: window.primaryColor
                         border.width: 1
@@ -205,7 +206,7 @@ Rectangle {
                     Rectangle {
                         width: parent.width
                         height: quickActions.implicitHeight + 40
-                        color: window.surfaceColor
+                        color: "lightgrey" //window.surfaceColor
                         radius: 10
                         border.color: window.primaryColor
                         border.width: 1
@@ -267,7 +268,7 @@ Rectangle {
                     Rectangle {
                         width: parent.width
                         height: recentResults.implicitHeight + 40
-                        color: window.surfaceColor
+                        color: "lightgrey" //window.surfaceColor
                         radius: 10
                         border.color: window.primaryColor
                         border.width: 1
@@ -387,7 +388,7 @@ Rectangle {
                     Rectangle {
                         width: parent.width
                         height: systemInfo.implicitHeight + 40
-                        color: window.surfaceColor
+                        color: "lightgrey" //window.surfaceColor
                         radius: 10
                         border.color: window.primaryColor
                         border.width: 1

@@ -15,7 +15,7 @@ Rectangle {
     property string icon: ""
     property color borderColor: window ? window.primaryColor : "#2E86AB"
     property color focusColor: Qt.lighter(borderColor, 1.2)
-    property color backgroundColor: "white"
+    property color backgroundColor: "lightgrey" //"white"
     property int fontSize: 16
     
     signal accepted()

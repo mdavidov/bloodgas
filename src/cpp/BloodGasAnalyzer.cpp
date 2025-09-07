@@ -84,7 +84,7 @@ void BloodGasAnalyzer::startAnalysis(const QVariantMap &sampleData)
     
     m_currentSampleData = sampleData;
     m_isAnalyzing = true;
-    emit isAnalyzingChanged();
+    emit isAnalyzingChanged(true);
     
     // Simulate analysis time (3-5 seconds)
     int analysisTime = 3000 + QRandomGenerator::global()->bounded(2000);
@@ -100,7 +100,7 @@ void BloodGasAnalyzer::stopAnalysis()
         
     m_analysisTimer->stop();
     m_isAnalyzing = false;
-    emit isAnalyzingChanged();
+    emit isAnalyzingChanged(false);
     
     qDebug() << "Analysis stopped by user";
 }
@@ -121,7 +121,7 @@ void BloodGasAnalyzer::onAnalysisTimeout()
     m_hl7Manager->sendResults(results);
     
     m_isAnalyzing = false;
-    emit isAnalyzingChanged();
+    emit isAnalyzingChanged(false);
     emit analysisCompleted(results);
     
     qDebug() << "Analysis completed with results:" << results;

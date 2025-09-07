@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
+import QtQuick.Controls.Material
 import QtQuick.Layouts
 
 import BloodGasAnalyzer
@@ -9,11 +10,12 @@ import "components"
 
 ApplicationWindow {
     id: window
+    Material.theme: Material.Dark
     width: 1024
     height: 768
     visible: true
     title: qsTr("Blood Gas Analyzer")
-    
+
     property alias currentView: stackView.currentItem
     property bool isLoggedIn: authManager ? authManager.isLoggedIn : false
     
@@ -24,13 +26,13 @@ ApplicationWindow {
     readonly property color primaryColor: "#2E86AB"
     readonly property color secondaryColor: "#A23B72"
     readonly property color accentColor: "#F18F01"
-    readonly property color backgroundColor: "#F5F5F5"
+    readonly property color backgroundColor: "lightgrey" //"#F5F5F5"
     readonly property color surfaceColor: "#FFFFFF"
     readonly property color errorColor: "#E63946"
     readonly property color successColor: "#2D6A4F"
     
     background: Rectangle {
-        color: backgroundColor
+        color: "lightgrey" //backgroundColor
     }
     
     header: Rectangle {
@@ -145,7 +147,7 @@ ApplicationWindow {
     // Message overlay
     Rectangle {
         id: messageOverlay
-        anchors.top: header.bottom
+        // anchors.top: header.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         width: Math.min(400, parent.width - 40)
         height: messageText.implicitHeight + 20

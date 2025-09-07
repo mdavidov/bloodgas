@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>resources/icons/analyzer.png</file>
+        <file>resources/icons/calibration.png</file>
+        <file>resources/icons/history.png</file>
+        <file>resources/icons/user.png</file>
+    </qresource>
+</RCC>

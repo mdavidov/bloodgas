@@ -3,10 +3,11 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "components"
 
+
 Rectangle {
     id: root
-    color: window.backgroundColor
-    
+    color: "lightgrey" //window.backgroundColor
+
     property bool calibrationInProgress: calibrationManager ? calibrationManager.isCalibrating : false
     property int calibrationProgress: calibrationManager ? calibrationManager.calibrationProgress : 0
     property string currentStep: calibrationManager ? calibrationManager.calibrationStep : ""
@@ -20,7 +21,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 80
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: window.primaryColor
             border.width: 2
@@ -66,7 +67,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: window.primaryColor
             border.width: 1

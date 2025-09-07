@@ -39,7 +39,7 @@ public slots:
     Q_INVOKABLE QVariantMap getLastResults() const;
     
 signals:
-    void isAnalyzingChanged();
+    void isAnalyzingChanged(bool isAnalyzing);
     void currentUserChanged();
     void isCalibratedChanged();
     void analysisCompleted(const QVariantMap &results);

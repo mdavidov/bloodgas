@@ -48,6 +48,7 @@ set(SOURCES
 qt6_add_executable(${PROJECT_NAME}
     src/cpp/main.cpp
     qml.qrc
+    resources.qrc
 )
 
 qt6_add_qml_module(${PROJECT_NAME}
@@ -64,11 +65,6 @@ qt6_add_qml_module(${PROJECT_NAME}
         src/qml/SampleInputView.qml
         src/qml/components/TouchButton.qml
         src/qml/components/InputField.qml
-    RESOURCES
-        resources/icons/analyzer.png
-        resources/icons/calibration.png
-        resources/icons/history.png
-        resources/icons/user.png
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE

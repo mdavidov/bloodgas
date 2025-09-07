@@ -89,7 +89,7 @@ void MainWindow::setupResultsSection()
     // Interpretation label
     interpretationLabel = new QLabel("Enter blood gas values and click 'Analyze' to see results.", this);
     interpretationLabel->setWordWrap(true);
-    interpretationLabel->setStyleSheet("QLabel { padding: 10px; border: 1px solid gray; background-color: #f0f0f0; }");
+    interpretationLabel->setStyleSheet("QLabel { padding: 10px; border: 1px solid gray; background-color: grey; }");
     resultsLayout->addWidget(interpretationLabel);
     
     mainLayout->addWidget(resultsGroup);

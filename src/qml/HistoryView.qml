@@ -3,10 +3,11 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "components"
 
+
 Rectangle {
     id: root
-    color: window.backgroundColor
-    
+    color: "lightgrey" //window.backgroundColor
+
     ColumnLayout {
         anchors.fill: parent
         anchors.margins: 20
@@ -16,7 +17,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 80
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: window.primaryColor
             border.width: 2
@@ -51,7 +52,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 100
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: "#E0E0E0"
             border.width: 1
@@ -96,7 +97,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: "#E0E0E0"
             border.width: 1

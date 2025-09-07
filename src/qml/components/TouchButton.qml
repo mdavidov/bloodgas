@@ -64,7 +64,7 @@ Button {
     
     contentItem: Text {
         text: control.text
-        color: control.enabled ? "white" : "#999999"
+        // color: control.enabled ? "white" : "#999999"
         font.pixelSize: fontSize
         font.bold: true
         horizontalAlignment: Text.AlignHCenter

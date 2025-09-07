@@ -3,10 +3,11 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import "components"
 
+
 Rectangle {
     id: root
-    color: window.backgroundColor
-    
+    color: "lightgrey" //window.backgroundColor
+
     property bool analysisInProgress: bloodGasAnalyzer ? bloodGasAnalyzer.isAnalyzing : false
     
     ColumnLayout {
@@ -18,7 +19,7 @@ Rectangle {
         Rectangle {
             Layout.fillWidth: true
             Layout.preferredHeight: 80
-            color: window.surfaceColor
+            color: "lightgrey" //window.surfaceColor
             radius: 10
             border.color: window.primaryColor
             border.width: 2
@@ -69,7 +70,7 @@ Rectangle {
             Rectangle {
                 Layout.preferredWidth: 400
                 Layout.fillHeight: true
-                color: window.surfaceColor
+                color: "lightgrey" //window.surfaceColor
                 radius: 10
                 border.color: window.primaryColor
                 border.width: 1
@@ -177,7 +178,7 @@ Rectangle {
                             
                             Text {
                                 text: "Analysis Type"
-                                font.pixelSize: 14
+                                font.pixelSize: 16
                                 font.bold: true
                                 color: "#666666"
                             }
@@ -185,26 +186,25 @@ Rectangle {
                             Column {
                                 width: parent.width
                                 spacing: 5
-                                
+
                                 CheckBox {
                                     id: bloodGasCheck
                                     text: "Blood Gas (pH, pO₂, pCO₂)"
                                     checked: true
-                                    font.pixelSize: 12
+                                    font.pixelSize: 14
                                 }
-                                
                                 CheckBox {
                                     id: electrolyteCheck
                                     text: "Electrolytes (Na, K, Cl, Ca)"
                                     checked: true
-                                    font.pixelSize: 12
+                                    font.pixelSize: 14
                                 }
                                 
                                 CheckBox {
                                     id: metaboliteCheck
                                     text: "Metabolites (Glucose, Lactate)"
                                     checked: true
-                                    font.pixelSize: 12
+                                    font.pixelSize: 14
                                 }
                             }
                         }
@@ -227,7 +227,7 @@ Rectangle {
                                 useAccentColor: true
                                 onClicked: startAnalysis()
                             }
-                            
+
                             TouchButton {
                                 visible: analysisInProgress
                                 width: parent.width
@@ -250,7 +250,7 @@ Rectangle {
             Rectangle {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                color: window.surfaceColor
+                color: "lightgrey" //"lightgrey" //window.surfaceColor
                 radius: 10
                 border.color: window.primaryColor
                 border.width: 1
@@ -555,7 +555,7 @@ Rectangle {
     
     function canStartAnalysis() {
         return sampleIdField.text.length > 0 && 
-               temperatureField.acceptableInput &&
+               //temperatureField.acceptableInput &&
                (bloodGasCheck.checked || electrolyteCheck.checked || metaboliteCheck.checked)
     }
     
@@ -654,8 +654,41 @@ Rectangle {
             resultsColumn.resultsAvailable = false
             window.showMessage("Analysis error: " + error, "error")
         }
+        function onAnalysisStopped() {
+            window.showMessage("Analysis stopped", "warning")
+        }
+        function onCalibrationStatusChanged(isCalibrated) {
+            if (isCalibrated) {
+                window.showMessage("Device calibrated and ready", "success")
+            } else {
+                window.showMessage("Device not calibrated", "error")
+            }
+        }
+        function onHL7StatusChanged(isConnected) {
+            if (isConnected) {
+                window.showMessage("HL7 connection established", "success")
+            }
+            else {
+                window.showMessage("HL7 connection lost", "error")
+            }
+        }
+        function onExportCompleted(format) {
+            window.showMessage("Results exported as " + format, "success")
+        }
+        function onExportError(error) {
+            window.showMessage("Export error: " + error, "error")
+        }
+        function onResultsSent() {
+            window.showMessage("Results sent successfully", "success")
+        }
+        function onResultsSendError(error) {
+            window.showMessage("Error sending results: " + error, "error")
+        }
+        function onIsAnalyzingChanged(isAnalyzing) {
+            window.showMessage("Analysis " + (isAnalyzing ? "started" : "stopped"), isAnalyzing ? "info" : "warning")
+        }
     }
-    
+
     // Initialize
     Component.onCompleted: {
         clearForm()
