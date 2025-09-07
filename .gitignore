@@ -1,0 +1,58 @@
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Mac
+.DS_Store
+*.app
+
+# CMake
+CMakeLists.txt.user*
+b/
+build/
+
+# Qt-es
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+.qmake.cache
+.qmake.stash
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*.qm
+*.prl
+
+# Qt unit tests
+target_wrapper.*
+
+# QtCreator
+*.autosave
+*.qmlproject.user
+*.qmlproject.user.*
+compile_commands.json
+*creator.user*
+*_qmlcache.qrc
+
+# Project specific
+*.db
+*.log
+prototype/test_core
+prototype/tests/test_bloodgasanalyzer

@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/">
+    <file>src/qml/main.qml</file>
+    <file>src/qml/MainView.qml</file>
+    <file>src/qml/CalibrationView.qml</file>
+    <file>src/qml/HistoryView.qml</file>
+    <file>src/qml/LoginView.qml</file>
+    <file>src/qml/SampleInputView.qml</file>
+    <file>src/qml/components/InputField.qml</file>
+    <file>src/qml/components/TouchButton.qml</file>
+  </qresource>
+</RCC>

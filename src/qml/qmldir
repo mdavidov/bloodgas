@@ -1,0 +1,15 @@
+
+module LoginView
+LoginView 1.0 src/qml/LoginView.qml
+
+module MainView
+MainView 1.0 src/qml/MainView.qml
+
+module CalibrationView
+CalibrationView 1.0 src/qml/CalibrationView.qml
+
+module HistoryView
+HistoryView 1.0 src/qml/HistoryView.qml
+
+module SampleInputView
+SampleInputView 1.0 src/qml/SampleInputView.qml

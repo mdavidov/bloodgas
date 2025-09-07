@@ -1,0 +1,6 @@
+
+module TouchButton
+TouchButton 1.0 src/qml/components/TouchButton.qml
+
+module InputField
+InputField 1.0 src/qml/components/InputField.qml
